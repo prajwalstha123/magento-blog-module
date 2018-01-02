@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Gbd_Blog::blog" title="Blog" module="Gbd_Blog" sortOrder="51" resource="Gbd_Blog::blog"/>
-        <add id="Gbd_Blog::post" title="Manage Posts" module="Gbd_Blog" sortOrder="10" action="Gbd_Blog/post" resource="Gbd_Blog::post" parent="Gbd_Blog::blog"/>
+        <add id="Gbd_Blog::post" title="Manage Posts" module="Gbd_Blog" sortOrder="10" action="gbd_blog/post" resource="Gbd_Blog::post" parent="Gbd_Blog::blog"/>
         <add id="Gbd_Blog::blog_configuration" title="Configuration" module="Gbd_Blog" sortOrder="99" parent="Gbd_Blog::blog" action="adminhtml/system_config/edit/section/blog" resource="Gbd_Blog::blog_configuration"/>
     </menu>
 </config>

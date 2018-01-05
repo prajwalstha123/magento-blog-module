@@ -1,10 +1,21 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <update handle="styles"/>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="editor"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="gbd_blog_form"/>
+            <block class="Gbd\Blog\Block\Adminhtml\Post\Edit" name="gbd_blog_post_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Gbd\Blog\Block\Adminhtml\Post\Edit\Tabs" name="gbd_blog_post_tabs">
+                <block class="Gbd\Blog\Block\Adminhtml\Post\Edit\Tab\Post" name="gbd_blog_post_edit_tab_post"/>
+                <!--<block class="Gbd\Blog\Block\Adminhtml\Post\Edit\Tab\Tag" name="gbd_blog_post_edit_tab_tag"/>-->
+                <!--<block class="Gbd\Blog\Block\Adminhtml\Post\Edit\Tab\Topic" name="gbd_blog_post_edit_tab_topic"/>-->
+                <!--<block class="Gbd\Blog\Block\Adminhtml\Post\Edit\Tab\Product" name="gbd_blog_post_edit_tab_product"/>-->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">post</argument>
+                    <argument name="block" xsi:type="string">gbd_blog_post_edit_tab_post</argument>
+                </action>
+            </block>
         </referenceContainer>
     </body>
 </page>

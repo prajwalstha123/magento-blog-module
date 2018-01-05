@@ -1,21 +1,6 @@
-<?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="styles"/>
     <body>
-<<<<<<< HEAD
-        <referenceBlock name="menu">
-            <action method="setActive">
-                <argument name="itemId" xsi:type="string">Gbd_Blog::post</argument>
-            </action>
-        </referenceBlock>
-        <referenceBlock name="page.title">
-            <action method="setTitleClass">
-                <argument name="class" xsi:type="string">complex</argument>
-            </action>
-        </referenceBlock>
-        <referenceContainer name="content">
-            <uiComponent name="gbd_blog_post_listing"/>
-=======
         <referenceContainer name="content">
             <block class="Gbd\Blog\Block\Adminhtml\Post" name="gbd_blog_post_grid">
                 <block class="Magento\Backend\Block\Widget\Grid" name="gbd_blog_post_grid.grid" as="grid">
@@ -68,23 +53,22 @@
                                 <argument name="header_css_class" xsi:type="string">col-id</argument>
                             </arguments>
                         </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="gbd.blog.massaction" as="grid.massaction">
+                            <arguments>
+                                <argument name="massaction_id_field" xsi:type="string">post_id</argument>
+                                <argument name="form_field_name" xsi:type="string">ids</argument>
+                                <argument name="use_select_all" xsi:type="string">1</argument>
+                                <argument name="options" xsi:type="array">
+                                    <item name="disable" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                                        <item name="url" xsi:type="string">*/*/massDelete</item>
+                                    </item>
+                                </argument>
+                            </arguments>
+                        </block>
                     </block>
                 </block>
             </block>
-            <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="gbd.blog.massaction" as="grid.massaction">
-                <arguments>
-                    <argument name="massaction_id_field" xsi:type="string">post_id</argument>
-                    <argument name="form_field_name" xsi:type="string">ids</argument>
-                    <argument name="use_select_all" xsi:type="string">1</argument>
-                    <argument name="options" xsi:type="array">
-                        <item name="disable" xsi:type="array">
-                            <item name="label" xsi:type="string" translate="true">Delete</item>
-                            <item name="url" xsi:type="string">*/*/massDelete</item>
-                        </item>
-                    </argument>
-                </arguments>
-            </block>
->>>>>>> 369c8de43dfb918c8847efb5b5b850cecbb49f08
         </referenceContainer>
     </body>
 </page>

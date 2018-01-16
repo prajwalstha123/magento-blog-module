@@ -18,12 +18,10 @@ class Index extends Action
         $this->resultPageFactory = $resultPageFactory;
     }
 
-
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->getConfig()->getTitle()->prepend( __('Posts') );
-
         return $resultPage;
     }
 }

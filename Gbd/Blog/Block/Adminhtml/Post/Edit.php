@@ -4,7 +4,7 @@ namespace Gbd\Blog\Block\Adminhtml\Post;
 
 /**
  * Class Edit
- * @package Mageplaza\Blog\Block\Adminhtml\Post
+ * @package Gbd\Blog\Block\Adminhtml\Post
  */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -69,7 +69,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
 	 */
 	public function getHeaderText()
 	{
-		/** @var \Mageplaza\Blog\Model\Post $post */
+		/** @var \Gbd\Blog\Model\Post $post */
 		$post = $this->coreRegistry->registry('gbd_blog_post');
 		if ($post->getId()) {
 			return __("Edit Post '%1'", $this->escapeHtml($post->getName()));

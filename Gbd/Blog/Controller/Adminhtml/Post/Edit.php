@@ -60,7 +60,6 @@ class Edit extends Post
 		}
 
 		$this->coreRegistry->register('gbd_blog_post', $post);
-
 		/** @var \Magento\Backend\Model\View\Result\Page|\Magento\Framework\View\Result\Page $resultPage */
 		$resultPage = $this->resultPageFactory->create();
 		$resultPage->setActiveMenu('Gbd_Blog::post');
